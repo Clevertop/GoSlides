@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccokwij05tg74"]
+[gd_scene load_steps=5 format=3 uid="uid://ccokwij05tg74"]
 
 [ext_resource type="PackedScene" uid="uid://b3hn5sbsngqud" path="res://widgets/header.tscn" id="1_bhwne"]
+[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="1_glcb6"]
+[ext_resource type="PackedScene" uid="uid://cmlxbj2fr6ivw" path="res://widgets/footer.tscn" id="2_8pox0"]
+[ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="3_ml57n"]
 
 [node name="BaseSlide" type="VBoxContainer"]
 anchors_preset = 15
@@ -8,8 +11,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_glcb6")
 
 [node name="Header" parent="." instance=ExtResource("1_bhwne")]
 layout_mode = 2
 title = "Welcome to Godot!"
 subtitle = "It's a really cool engine!"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#E3266F]Game studios[/color] like Gamblify, GuaranApps, Kivano...
+[color=#26BFE3]Schools[/color] including School4Games Berlin, KidsCanCode...
+[color=#02E180]Content creators[/color] like Heartbeast, GamesFromScratch, [i]GDQuest[/i]...
+"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_ml57n")
+expand_mode = 3
+
+[node name="Footer" parent="." instance=ExtResource("2_8pox0")]
+layout_mode = 2
+text = "This is a footer component"
