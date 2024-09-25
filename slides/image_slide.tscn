@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://d8j6ib7w6yys"]
+
+[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="1_j1nyb"]
+[ext_resource type="Texture2D" uid="uid://bcnf6sw6dxp8b" path="res://02-3d-outdoor-with-editor.webp" id="2_3v16y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ys6im"]
+font_size = 60
+
+[node name="ImageSlide" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j1nyb")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_3v16y")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "This is a caption for the fullscreen content"
+label_settings = SubResource("LabelSettings_ys6im")

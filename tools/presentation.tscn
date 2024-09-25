@@ -1,12 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=10 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://cjnkbtvmbn8nf" path="res://slides/title.tscn" id="2_t5os2"]
 [ext_resource type="PackedScene" uid="uid://ccokwij05tg74" path="res://slides/standard.tscn" id="3_o6pbq"]
+[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="4_wo3mt"]
+[ext_resource type="Texture2D" uid="uid://bcnf6sw6dxp8b" path="res://02-3d-outdoor-with-editor.webp" id="5_8ldqg"]
+[ext_resource type="VideoStream" path="res://Cat-has-the-softest_-sweetest-little-meow.ogv" id="6_icktr"]
 
-[node name="Presentation" type="Node" node_paths=PackedStringArray("slides_node")]
+[sub_resource type="LabelSettings" id="LabelSettings_ys6im"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_a1y11"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_gl1th"]
+font_color = Color(1, 0, 0, 1)
+
+[node name="Presentation" type="Node" node_paths=PackedStringArray("slides_node", "exit_bar")]
 script = ExtResource("1_qta7b")
 slides_node = NodePath("Slides")
+exit_bar = NodePath("ProgressBar")
 
 [node name="Slides" type="Control" parent="."]
 layout_mode = 3
@@ -18,20 +31,109 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BaseSlide" parent="Slides" instance=ExtResource("2_t5os2")]
+[node name="TitleSlide" parent="Slides" instance=ExtResource("2_t5os2")]
 layout_mode = 1
 
-[node name="BaseSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
+[node name="StandardSlide1" parent="Slides" instance=ExtResource("3_o6pbq")]
 layout_mode = 1
 
-[node name="BaseSlide3" parent="Slides" instance=ExtResource("3_o6pbq")]
+[node name="StandardSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
 layout_mode = 1
 
-[node name="Header" parent="Slides/BaseSlide3" index="0"]
+[node name="Header" parent="Slides/StandardSlide2" index="0"]
 title = "Meowww!!!"
 subtitle = "This is the third slide"
 
-[node name="Footer" parent="Slides/BaseSlide3" index="2"]
+[node name="Footer" parent="Slides/StandardSlide2" index="2"]
 text = "Things are coming along well~"
 
-[editable path="Slides/BaseSlide3"]
+[node name="ImageSlide" type="VBoxContainer" parent="Slides"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_wo3mt")
+
+[node name="PanelContainer" type="PanelContainer" parent="Slides/ImageSlide"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect2" type="TextureRect" parent="Slides/ImageSlide/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("5_8ldqg")
+
+[node name="PanelContainer" type="PanelContainer" parent="Slides/ImageSlide/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Slides/ImageSlide/PanelContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Slides/ImageSlide/PanelContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "This is a caption for the fullscreen content"
+label_settings = SubResource("LabelSettings_ys6im")
+
+[node name="VideoSlide" type="VBoxContainer" parent="Slides"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_wo3mt")
+
+[node name="PanelContainer" type="PanelContainer" parent="Slides/VideoSlide"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Slides/VideoSlide/PanelContainer"]
+layout_mode = 2
+stream = ExtResource("6_icktr")
+loop = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Slides/VideoSlide/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Slides/VideoSlide/PanelContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Slides/VideoSlide/PanelContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "look at this adorable little cat :3"
+label_settings = SubResource("LabelSettings_a1y11")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+max_value = 1.0
+step = 0.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Exiting"
+label_settings = SubResource("LabelSettings_gl1th")
+horizontal_alignment = 1
+
+[editable path="Slides/StandardSlide2"]

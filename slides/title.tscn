@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjnkbtvmbn8nf"]
+[gd_scene load_steps=4 format=3 uid="uid://cjnkbtvmbn8nf"]
 
 [ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="1_w4q3u"]
+[ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="3_26fd0"]
 [ext_resource type="Texture2D" uid="uid://5girh8nk4p3f" path="res://gradient.tres" id="5_684v5"]
 
 [node name="BaseSlide" type="VBoxContainer"]
@@ -28,3 +29,15 @@ layout_mode = 2
 bbcode_enabled = true
 text = "[wave amp=50.0 freq=5.0 connected=1][center][font_size=160][color=#FFFFFF]The Awesome Godot Presentation!!![/color][/font_size][/center][/wave]"
 fit_content = true
+
+[node name="Icon" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+position = Vector2(251, 164)
+texture = ExtResource("3_26fd0")
+
+[node name="Icon2" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+position = Vector2(868, 889)
+texture = ExtResource("3_26fd0")
+
+[node name="Icon3" type="Sprite2D" parent="PanelContainer/VBoxContainer"]
+position = Vector2(1523, 130)
+texture = ExtResource("3_26fd0")
