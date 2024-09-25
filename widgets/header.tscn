@@ -1,13 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3hn5sbsngqud"]
+[gd_scene load_steps=5 format=3 uid="uid://b3hn5sbsngqud"]
 
 [ext_resource type="Script" path="res://widgets/header.gd" id="1_h4khk"]
-
-[sub_resource type="Gradient" id="Gradient_o7xwa"]
-colors = PackedColorArray(0.46429, 0.00206019, 0.726487, 1, 0.305082, 0.490299, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vfh7v"]
-gradient = SubResource("Gradient_o7xwa")
-fill_from = Vector2(0, 1)
+[ext_resource type="Texture2D" uid="uid://5girh8nk4p3f" path="res://gradient.tres" id="2_nq52j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjry0"]
 font_size = 66
@@ -22,7 +16,7 @@ subtitle_node = NodePath("VBoxContainer/Subtitle")
 
 [node name="Gradient" type="TextureRect" parent="."]
 layout_mode = 2
-texture = SubResource("GradientTexture2D_vfh7v")
+texture = ExtResource("2_nq52j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2

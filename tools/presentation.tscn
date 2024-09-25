@@ -1,26 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=4 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
-[ext_resource type="PackedScene" uid="uid://xxqqqjgt1vmc" path="res://tools/base_slide.tscn" id="2_aqnf4"]
-
-[sub_resource type="Gradient" id="Gradient_7sx77"]
-colors = PackedColorArray(0.15482, 0.358303, 0.295465, 1, 0, 0.391486, 0.564688, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dod57"]
-gradient = SubResource("Gradient_7sx77")
-fill_from = Vector2(0, 1)
+[ext_resource type="PackedScene" uid="uid://cjnkbtvmbn8nf" path="res://slides/title.tscn" id="2_t5os2"]
+[ext_resource type="PackedScene" uid="uid://ccokwij05tg74" path="res://slides/standard.tscn" id="3_o6pbq"]
 
 [node name="Presentation" type="Node" node_paths=PackedStringArray("slides_node")]
 script = ExtResource("1_qta7b")
 slides_node = NodePath("Slides")
-
-[node name="PresentationBackground" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_dod57")
 
 [node name="Slides" type="Control" parent="."]
 layout_mode = 3
@@ -32,6 +18,20 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="BaseSlide" parent="Slides" instance=ExtResource("2_aqnf4")]
-layout_mode = 0
-anchors_preset = 0
+[node name="BaseSlide" parent="Slides" instance=ExtResource("2_t5os2")]
+layout_mode = 1
+
+[node name="BaseSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
+layout_mode = 1
+
+[node name="BaseSlide3" parent="Slides" instance=ExtResource("3_o6pbq")]
+layout_mode = 1
+
+[node name="Header" parent="Slides/BaseSlide3" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
+
+[node name="Footer" parent="Slides/BaseSlide3" index="2"]
+text = "Things are coming along well~"
+
+[editable path="Slides/BaseSlide3"]
