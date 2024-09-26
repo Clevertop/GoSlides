@@ -50,9 +50,15 @@ func _process(delta):
 	else:
 		exit_clock -= delta*3.5
 		exit_clock = clamp(exit_clock, 0, 2)
-	
+
 	exit_bar.visible = exit_clock > 0
 	exit_bar.value = exit_clock/2
+	
+	if Input.is_action_just_pressed("fullscreen"):
+		if(DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED):
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 #endregion
 
