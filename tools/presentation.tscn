@@ -32,12 +32,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TitleSlide" parent="Slides" instance=ExtResource("2_t5os2")]
+visible = false
 layout_mode = 1
 
 [node name="StandardSlide1" parent="Slides" instance=ExtResource("3_o6pbq")]
 layout_mode = 1
 
 [node name="StandardSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/StandardSlide2" index="0"]
@@ -48,6 +50,7 @@ subtitle = "This is the third slide"
 text = "Things are coming along well~"
 
 [node name="ImageSlide" type="VBoxContainer" parent="Slides"]
+visible = false
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -81,6 +84,7 @@ text = "This is a caption for the fullscreen content"
 label_settings = SubResource("LabelSettings_ys6im")
 
 [node name="VideoSlide" type="VBoxContainer" parent="Slides"]
+visible = false
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0

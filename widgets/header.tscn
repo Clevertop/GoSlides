@@ -10,6 +10,9 @@ font_size = 66
 font_size = 36
 
 [node name="Header" type="PanelContainer" node_paths=PackedStringArray("title_node", "subtitle_node")]
+custom_minimum_size = Vector2(0, 200)
+offset_right = 138.0
+offset_bottom = 145.0
 script = ExtResource("1_h4khk")
 title_node = NodePath("VBoxContainer/Title")
 subtitle_node = NodePath("VBoxContainer/Subtitle")
@@ -20,15 +23,18 @@ texture = ExtResource("2_nq52j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Title"
 label_settings = SubResource("LabelSettings_mjry0")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Title"
 label_settings = SubResource("LabelSettings_2kr3f")
 horizontal_alignment = 1
+vertical_alignment = 1
