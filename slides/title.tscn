@@ -27,7 +27,7 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[wave amp=50.0 freq=5.0 connected=1][center][font_size=160][color=#FFFFFF]Godot: The new kids on the block![/color][/font_size][/center][/wave]"
+text = "[wave amp=50.0 freq=5.0 connected=1][center][font_size=160][color=#FFFFFF]Godot: The new kid on the block![/color][/font_size][/center][/wave]"
 fit_content = true
 
 [node name="Icon" type="Sprite2D" parent="PanelContainer/VBoxContainer"]

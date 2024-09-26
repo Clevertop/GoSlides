@@ -1,22 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=10 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
-[ext_resource type="PackedScene" uid="uid://cjnkbtvmbn8nf" path="res://slides/title.tscn" id="2_t5os2"]
-[ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_y0y7a"]
-[ext_resource type="Texture2D" uid="uid://bs6f7cgyoy6hb" path="res://rug/1.png" id="3_1n18t"]
+[ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
+[ext_resource type="Texture2D" uid="uid://bs6f7cgyoy6hb" path="res://rug/1.png" id="3_ipheb"]
 [ext_resource type="PackedScene" uid="uid://ccokwij05tg74" path="res://slides/standard.tscn" id="3_o6pbq"]
-[ext_resource type="Texture2D" uid="uid://bcgsioqubeos3" path="res://rug/2.png" id="4_4lnbk"]
-[ext_resource type="Texture2D" uid="uid://xq82athlp711" path="res://rug/3.png" id="4_toov0"]
-[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="4_wo3mt"]
-[ext_resource type="Texture2D" uid="uid://bcnf6sw6dxp8b" path="res://02-3d-outdoor-with-editor.webp" id="5_8ldqg"]
-[ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="5_k0iyo"]
-[ext_resource type="VideoStream" path="res://Cat-has-the-softest_-sweetest-little-meow.ogv" id="6_icktr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ys6im"]
-font_size = 60
-
-[sub_resource type="LabelSettings" id="LabelSettings_a1y11"]
-font_size = 60
+[ext_resource type="Texture2D" uid="uid://bcgsioqubeos3" path="res://rug/2.png" id="4_s3h6q"]
+[ext_resource type="Texture2D" uid="uid://xq82athlp711" path="res://rug/3.png" id="5_soan3"]
+[ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="6_02god"]
+[ext_resource type="PackedScene" uid="uid://cap8s1gpqsueq" path="res://rug_player.tscn" id="12_xc2ke"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl1th"]
 font_color = Color(1, 0, 0, 1)
@@ -24,7 +15,7 @@ font_color = Color(1, 0, 0, 1)
 [node name="Presentation" type="Node" node_paths=PackedStringArray("slides_node", "exit_bar")]
 script = ExtResource("1_qta7b")
 slides_node = NodePath("Slides")
-exit_bar = NodePath("ProgressBar")
+exit_bar = NodePath("ExitBar")
 
 [node name="Slides" type="Control" parent="."]
 layout_mode = 3
@@ -36,142 +27,187 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ImageSlide2" parent="Slides" instance=ExtResource("2_y0y7a")]
+[node name="1" parent="Slides" instance=ExtResource("2_ik415")]
+visible = false
 layout_mode = 1
-anchors_preset = 15
 
-[node name="TextureRect2" parent="Slides/ImageSlide2/PanelContainer" index="0"]
-texture = ExtResource("3_1n18t")
+[node name="TextureRect2" parent="Slides/1/PanelContainer" index="0"]
+texture = ExtResource("3_ipheb")
 expand_mode = 3
 
-[node name="PanelContainer" parent="Slides/ImageSlide2/PanelContainer" index="1"]
+[node name="PanelContainer" parent="Slides/1/PanelContainer" index="1"]
 visible = false
 
-[node name="ImageSlide3" parent="Slides" instance=ExtResource("2_y0y7a")]
+[node name="2" parent="Slides" instance=ExtResource("2_ik415")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
 
-[node name="TextureRect2" parent="Slides/ImageSlide3/PanelContainer" index="0"]
-texture = ExtResource("4_4lnbk")
+[node name="TextureRect2" parent="Slides/2/PanelContainer" index="0"]
+texture = ExtResource("4_s3h6q")
 expand_mode = 3
 
-[node name="PanelContainer" parent="Slides/ImageSlide3/PanelContainer" index="1"]
+[node name="PanelContainer" parent="Slides/2/PanelContainer" index="1"]
 visible = false
 
-[node name="ImageSlide4" parent="Slides" instance=ExtResource("2_y0y7a")]
+[node name="3" parent="Slides" instance=ExtResource("2_ik415")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
 
-[node name="TextureRect2" parent="Slides/ImageSlide4/PanelContainer" index="0"]
-texture = ExtResource("4_toov0")
+[node name="TextureRect2" parent="Slides/3/PanelContainer" index="0"]
+texture = ExtResource("5_soan3")
 expand_mode = 3
 
-[node name="PanelContainer" parent="Slides/ImageSlide4/PanelContainer" index="1"]
+[node name="PanelContainer" parent="Slides/3/PanelContainer" index="1"]
 visible = false
 
-[node name="ImageSlide5" parent="Slides" instance=ExtResource("2_y0y7a")]
+[node name="4" parent="Slides" instance=ExtResource("2_ik415")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
 
-[node name="TextureRect2" parent="Slides/ImageSlide5/PanelContainer" index="0"]
-texture = ExtResource("5_k0iyo")
+[node name="TextureRect2" parent="Slides/4/PanelContainer" index="0"]
+texture = ExtResource("6_02god")
 expand_mode = 3
 
-[node name="PanelContainer" parent="Slides/ImageSlide5/PanelContainer" index="1"]
+[node name="PanelContainer" parent="Slides/4/PanelContainer" index="1"]
 visible = false
 
-[node name="TitleSlide" parent="Slides" instance=ExtResource("2_t5os2")]
+[node name="RugPlayer" parent="Slides/4" instance=ExtResource("12_xc2ke")]
+position = Vector2(1503, 568)
+
+[node name="What is Godot?" parent="Slides" instance=ExtResource("3_o6pbq")]
+layout_mode = 1
+
+[node name="Header" parent="Slides/What is Godot?" index="0"]
+title = "What is Godot?"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "It is an [u]open source[/u] game engine.
+
+But wait... what does open source mean?"
+
+[node name="Footer" parent="Slides/What is Godot?" index="2"]
+visible = false
+text = "Footer"
+
+[node name="Glad You Asked!" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
 
-[node name="StandardSlide1" parent="Slides" instance=ExtResource("3_o6pbq")]
+[node name="Header" parent="Slides/Glad You Asked!" index="0"]
+visible = false
+title = "What is Godot?"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/Glad You Asked!/ColorRect/MarginContainer/HBoxContainer" index="0"]
+size_flags_vertical = 4
+text = "[center] [font_size=150]I'm so glad you asked!"
+fit_content = true
+
+[node name="TextureRect" parent="Slides/Glad You Asked!/ColorRect/MarginContainer/HBoxContainer" index="1"]
+visible = false
+
+[node name="Footer" parent="Slides/Glad You Asked!" index="2"]
+visible = false
+text = "Footer"
+
+[node name="What is open source?" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
 
-[node name="StandardSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
+[node name="Header" parent="Slides/What is open source?" index="0"]
+title = "What is open source software?"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "Open source means that the original source code is freely available. This means that the engine is:
+[ul]Redistributable
+Modifiable
+Collaborative
+Free forever!"
+
+[node name="Footer" parent="Slides/What is open source?" index="2"]
+visible = false
+text = "Footer"
+
+[node name="Games made in Godot" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
 
-[node name="Header" parent="Slides/StandardSlide2" index="0"]
+[node name="Header" parent="Slides/Games made in Godot" index="0"]
 title = "Meowww!!!"
 subtitle = "This is the third slide"
 
-[node name="Footer" parent="Slides/StandardSlide2" index="2"]
+[node name="Footer" parent="Slides/Games made in Godot" index="2"]
 text = "Things are coming along well~"
 
-[node name="ImageSlide" type="VBoxContainer" parent="Slides"]
+[node name="Benefits for game dev" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_wo3mt")
+layout_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="Slides/ImageSlide"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Header" parent="Slides/Benefits for game dev" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
 
-[node name="TextureRect2" type="TextureRect" parent="Slides/ImageSlide/PanelContainer"]
-layout_mode = 2
-texture = ExtResource("5_8ldqg")
+[node name="Footer" parent="Slides/Benefits for game dev" index="2"]
+text = "Things are coming along well~"
 
-[node name="PanelContainer" type="PanelContainer" parent="Slides/ImageSlide/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-
-[node name="MarginContainer" type="MarginContainer" parent="Slides/ImageSlide/PanelContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Label" type="Label" parent="Slides/ImageSlide/PanelContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-text = "This is a caption for the fullscreen content"
-label_settings = SubResource("LabelSettings_ys6im")
-
-[node name="VideoSlide" type="VBoxContainer" parent="Slides"]
+[node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("4_wo3mt")
+layout_mode = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="Slides/VideoSlide"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Header" parent="Slides/What makes Godot different?" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Slides/VideoSlide/PanelContainer"]
-layout_mode = 2
-stream = ExtResource("6_icktr")
-loop = true
+[node name="Footer" parent="Slides/What makes Godot different?" index="2"]
+text = "Things are coming along well~"
 
-[node name="PanelContainer" type="PanelContainer" parent="Slides/VideoSlide/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
+[node name="Limitations" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
+layout_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Slides/VideoSlide/PanelContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+[node name="Header" parent="Slides/Limitations" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
 
-[node name="Label" type="Label" parent="Slides/VideoSlide/PanelContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-text = "look at this adorable little cat :3"
-label_settings = SubResource("LabelSettings_a1y11")
+[node name="Footer" parent="Slides/Limitations" index="2"]
+text = "Things are coming along well~"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="Godot\'s killer features" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
+layout_mode = 1
+
+[node name="Header" parent="Slides/Godot\'s killer features" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
+
+[node name="Footer" parent="Slides/Godot\'s killer features" index="2"]
+text = "Things are coming along well~"
+
+[node name="Want to learn Godot?" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
+layout_mode = 1
+
+[node name="Header" parent="Slides/Want to learn Godot?" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
+
+[node name="Footer" parent="Slides/Want to learn Godot?" index="2"]
+text = "Things are coming along well~"
+
+[node name="Our contact page (Leave up for questions)" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
+layout_mode = 1
+
+[node name="Header" parent="Slides/Our contact page (Leave up for questions)" index="0"]
+title = "Meowww!!!"
+subtitle = "This is the third slide"
+
+[node name="Footer" parent="Slides/Our contact page (Leave up for questions)" index="2"]
+text = "Things are coming along well~"
+
+[node name="ExitBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 50)
 anchors_preset = 10
 anchor_right = 1.0
@@ -183,7 +219,7 @@ max_value = 1.0
 step = 0.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar"]
+[node name="Label" type="Label" parent="ExitBar"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -193,8 +229,17 @@ text = "Exiting"
 label_settings = SubResource("LabelSettings_gl1th")
 horizontal_alignment = 1
 
-[editable path="Slides/ImageSlide2"]
-[editable path="Slides/ImageSlide3"]
-[editable path="Slides/ImageSlide4"]
-[editable path="Slides/ImageSlide5"]
-[editable path="Slides/StandardSlide2"]
+[editable path="Slides/1"]
+[editable path="Slides/2"]
+[editable path="Slides/3"]
+[editable path="Slides/4"]
+[editable path="Slides/What is Godot?"]
+[editable path="Slides/Glad You Asked!"]
+[editable path="Slides/What is open source?"]
+[editable path="Slides/Games made in Godot"]
+[editable path="Slides/Benefits for game dev"]
+[editable path="Slides/What makes Godot different?"]
+[editable path="Slides/Limitations"]
+[editable path="Slides/Godot\'s killer features"]
+[editable path="Slides/Want to learn Godot?"]
+[editable path="Slides/Our contact page (Leave up for questions)"]
