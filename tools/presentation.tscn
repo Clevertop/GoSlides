@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=15 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://cjnkbtvmbn8nf" path="res://slides/title.tscn" id="2_t5os2"]
+[ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_y0y7a"]
+[ext_resource type="Texture2D" uid="uid://bs6f7cgyoy6hb" path="res://rug/1.png" id="3_1n18t"]
 [ext_resource type="PackedScene" uid="uid://ccokwij05tg74" path="res://slides/standard.tscn" id="3_o6pbq"]
+[ext_resource type="Texture2D" uid="uid://bcgsioqubeos3" path="res://rug/2.png" id="4_4lnbk"]
+[ext_resource type="Texture2D" uid="uid://xq82athlp711" path="res://rug/3.png" id="4_toov0"]
 [ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="4_wo3mt"]
 [ext_resource type="Texture2D" uid="uid://bcnf6sw6dxp8b" path="res://02-3d-outdoor-with-editor.webp" id="5_8ldqg"]
+[ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="5_k0iyo"]
 [ext_resource type="VideoStream" path="res://Cat-has-the-softest_-sweetest-little-meow.ogv" id="6_icktr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ys6im"]
@@ -31,11 +36,59 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="ImageSlide2" parent="Slides" instance=ExtResource("2_y0y7a")]
+layout_mode = 1
+anchors_preset = 15
+
+[node name="TextureRect2" parent="Slides/ImageSlide2/PanelContainer" index="0"]
+texture = ExtResource("3_1n18t")
+expand_mode = 3
+
+[node name="PanelContainer" parent="Slides/ImageSlide2/PanelContainer" index="1"]
+visible = false
+
+[node name="ImageSlide3" parent="Slides" instance=ExtResource("2_y0y7a")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+
+[node name="TextureRect2" parent="Slides/ImageSlide3/PanelContainer" index="0"]
+texture = ExtResource("4_4lnbk")
+expand_mode = 3
+
+[node name="PanelContainer" parent="Slides/ImageSlide3/PanelContainer" index="1"]
+visible = false
+
+[node name="ImageSlide4" parent="Slides" instance=ExtResource("2_y0y7a")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+
+[node name="TextureRect2" parent="Slides/ImageSlide4/PanelContainer" index="0"]
+texture = ExtResource("4_toov0")
+expand_mode = 3
+
+[node name="PanelContainer" parent="Slides/ImageSlide4/PanelContainer" index="1"]
+visible = false
+
+[node name="ImageSlide5" parent="Slides" instance=ExtResource("2_y0y7a")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+
+[node name="TextureRect2" parent="Slides/ImageSlide5/PanelContainer" index="0"]
+texture = ExtResource("5_k0iyo")
+expand_mode = 3
+
+[node name="PanelContainer" parent="Slides/ImageSlide5/PanelContainer" index="1"]
+visible = false
+
 [node name="TitleSlide" parent="Slides" instance=ExtResource("2_t5os2")]
 visible = false
 layout_mode = 1
 
 [node name="StandardSlide1" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="StandardSlide2" parent="Slides" instance=ExtResource("3_o6pbq")]
@@ -140,4 +193,8 @@ text = "Exiting"
 label_settings = SubResource("LabelSettings_gl1th")
 horizontal_alignment = 1
 
+[editable path="Slides/ImageSlide2"]
+[editable path="Slides/ImageSlide3"]
+[editable path="Slides/ImageSlide4"]
+[editable path="Slides/ImageSlide5"]
 [editable path="Slides/StandardSlide2"]
