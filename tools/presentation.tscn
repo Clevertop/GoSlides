@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=28 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
@@ -9,7 +9,25 @@
 [ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="6_02god"]
 [ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="9_bqqad"]
 [ext_resource type="Script" path="res://tools/progress_bar.gd" id="9_k3gnd"]
+[ext_resource type="PackedScene" uid="uid://btfa7ec7kchhv" path="res://widgets/imageGallery.tscn" id="9_ps7ws"]
+[ext_resource type="Texture2D" uid="uid://cn0cen48gp28p" path="res://images/logo_large_color_light.png" id="9_sk8pf"]
+[ext_resource type="Texture2D" uid="uid://bmndc0dperqpb" path="res://images/Screenshot 2024-09-27 154936.png" id="11_0qxko"]
+[ext_resource type="Texture2D" uid="uid://bcnf6sw6dxp8b" path="res://02-3d-outdoor-with-editor.webp" id="11_ynajw"]
+[ext_resource type="Texture2D" uid="uid://bro0snxc1xvip" path="res://images/Screenshot 2024-09-27 155007.png" id="12_p1su2"]
 [ext_resource type="PackedScene" uid="uid://cap8s1gpqsueq" path="res://rug_player.tscn" id="12_xc2ke"]
+[ext_resource type="Texture2D" uid="uid://bq4r6bas21txf" path="res://images/editor_tps_demo_1920x1080.jpg" id="13_w5s8p"]
+[ext_resource type="Texture2D" uid="uid://c1wyc76t8ytog" path="res://images/buckshot.jpg" id="14_ceuyj"]
+[ext_resource type="Texture2D" uid="uid://coy61vb5yhy73" path="res://images/slay2.jpg" id="15_bwg6r"]
+[ext_resource type="Texture2D" uid="uid://1fc8k8ety0g3" path="res://images/unrailed2.jpg" id="16_4et0e"]
+[ext_resource type="Texture2D" uid="uid://dlawei088i2cy" path="res://images/dome.webp" id="17_qhtu1"]
+[ext_resource type="Texture2D" uid="uid://d2q8t72dhen52" path="res://images/pvkk.jpg" id="18_qnxvp"]
+[ext_resource type="Texture2D" uid="uid://b1v2dcru3jow6" path="res://images/2d.png" id="19_cey53"]
+[ext_resource type="Texture2D" uid="uid://d06oe0rr0kgx5" path="res://images/vr.png" id="21_hhl27"]
+[ext_resource type="Texture2D" uid="uid://ca1yew26xuvgt" path="res://images/pvkk2.jpg" id="22_ixo4s"]
+[ext_resource type="Texture2D" uid="uid://dcev73iw7a8i8" path="res://images/code.png" id="23_35b2a"]
+[ext_resource type="Texture2D" uid="uid://bhd32musaym3c" path="res://images/docs.png" id="24_42sc6"]
+[ext_resource type="Texture2D" uid="uid://dsh82igoxdpgf" path="res://images/signals.webp" id="25_34hna"]
+[ext_resource type="Texture2D" uid="uid://bxto2xi1aqb0i" path="res://images/ps5.webp" id="26_7we82"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j57wk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -102,6 +120,12 @@ text = "It is an [u]open source[/u] game engine.
 
 But wait... what does open source mean?"
 
+[node name="TextureRect" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="1"]
+size_flags_horizontal = 3
+texture = ExtResource("9_sk8pf")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Footer" parent="Slides/What is Godot?" index="2"]
 visible = false
 text = "Footer"
@@ -144,6 +168,13 @@ Free forever![/ul]
 
 And of couse, that means that unlike some other engines... (ahem Unity) you'll never need to worry about surprise install fees!"
 
+[node name="ImageGallery" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
+layout_mode = 2
+images = Array[Texture2D]([ExtResource("11_0qxko"), ExtResource("12_p1su2"), ExtResource("13_w5s8p")])
+
+[node name="TextureRect" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="2"]
+visible = false
+
 [node name="Footer" parent="Slides/What is open source?" index="2"]
 visible = false
 text = "Footer"
@@ -167,6 +198,13 @@ text = "In addition to our games, there are a number of other games that are bei
 
 "
 
+[node name="TextureRect" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="1"]
+visible = false
+
+[node name="ImageGallery" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="2" instance=ExtResource("9_ps7ws")]
+layout_mode = 2
+images = Array[Texture2D]([ExtResource("14_ceuyj"), ExtResource("15_bwg6r"), ExtResource("16_4et0e"), ExtResource("17_qhtu1"), ExtResource("18_qnxvp")])
+
 [node name="Footer" parent="Slides/Games made in Godot" index="2"]
 text = "check out more at godotengine.org/showcase !"
 
@@ -187,10 +225,18 @@ text = "[ul] True 2D and 3D rendering engines[/ul]
  High Quality rendering
 "
 
+[node name="TextureRect" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="1"]
+visible = false
+
+[node name="ImageGallery" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="2" instance=ExtResource("9_ps7ws")]
+layout_mode = 2
+images = Array[Texture2D]([ExtResource("19_cey53"), ExtResource("11_ynajw"), ExtResource("21_hhl27"), ExtResource("22_ixo4s")])
+
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
 text = "Things are coming along well~"
 
 [node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/What makes Godot different?" index="0"]
@@ -203,6 +249,13 @@ text = "[ul] Built in code editor - includes autocomplete and inbuilt access to 
  Animation editor allows for easy editing of keyframes and managing tracks 
  Signals allow you to create events that other nodes in the game can subscribe to
  Robust UI layout system "
+
+[node name="ImageGallery" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
+layout_mode = 2
+images = Array[Texture2D]([ExtResource("23_35b2a"), ExtResource("24_42sc6"), ExtResource("25_34hna")])
+
+[node name="TextureRect" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="2"]
+visible = false
 
 [node name="Footer" parent="Slides/What makes Godot different?" index="2"]
 text = "Things are coming along well~"
@@ -218,6 +271,9 @@ subtitle = "mrowww...."
 text = "[ul] Due to the closed source nature of consoles, their exports templates cannot be included with the engine, or provided byt the godot foundation - You can still export to consoles but it requires more work, or using a porting service
  The default 3D graphics pipeline is much simpler compared to Unity's HDRP and Unreal engines default rendering but some developers have still made amazing graphics in godot!
  Due to being newer and not currenty widely used in the industry, the community is smaller "
+
+[node name="TextureRect" parent="Slides/Limitations/ColorRect/MarginContainer/HBoxContainer" index="1"]
+texture = ExtResource("26_7we82")
 
 [node name="Footer" parent="Slides/Limitations" index="2"]
 visible = false
