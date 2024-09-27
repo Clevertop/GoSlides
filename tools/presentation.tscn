@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=33 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
@@ -236,6 +236,7 @@ images = Array[Texture2D]([ExtResource("19_cey53"), ExtResource("11_ynajw"), Ext
 image_time = 6.0
 
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
@@ -262,6 +263,7 @@ image_time = 6.0
 visible = false
 
 [node name="Footer" parent="Slides/What makes Godot different?" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="Limitations" parent="Slides" instance=ExtResource("3_o6pbq")]
