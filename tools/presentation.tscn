@@ -177,28 +177,39 @@ text = "[ul] True 2D and 3D rendering engines[/ul]
 "
 
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
-visible = false
 text = "Things are coming along well~"
 
 [node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
 layout_mode = 1
 
 [node name="Header" parent="Slides/What makes Godot different?" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "What makes godot different?"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] Built in code editor - includes autocomplete and inbuilt access to docs
+ Choose to program in either gdscript or C#
+ Animation editor allows for easy editing of keyframes and managing tracks 
+ Signals allow you to create events that other nodes in the game can subscribe to
+ Robust UI layout system "
 
 [node name="Footer" parent="Slides/What makes Godot different?" index="2"]
 text = "Things are coming along well~"
 
 [node name="Limitations" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Limitations" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "Limitations"
+subtitle = "mrowww...."
+
+[node name="RichTextLabel" parent="Slides/Limitations/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] Due to the closed source nature of consoles, their exports templates cannot be included with the engine, or provided byt the godot foundation - You can still export to consoles but it requires more work, or using a porting service
+ The default 3D graphics pipeline is much simpler compared to Unity's HDRP and Unreal engines default rendering but some developers have still made amazing graphics in godot!
+ Due to being newer and not currenty widely used in the industry, the community is smaller "
 
 [node name="Footer" parent="Slides/Limitations" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features" parent="Slides" instance=ExtResource("3_o6pbq")]
