@@ -44,6 +44,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/2/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("4_s3h6q")
 expand_mode = 3
 
@@ -55,6 +56,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/3/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("5_soan3")
 expand_mode = 3
 
@@ -66,6 +68,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/4/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("6_02god")
 expand_mode = 3
 
@@ -76,6 +79,7 @@ visible = false
 position = Vector2(1503, 568)
 
 [node name="What is Godot?" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/What is Godot?" index="0"]
@@ -125,22 +129,34 @@ text = "Open source means that the original source code is freely available. Thi
 [ul]Redistributable
 Modifiable
 Collaborative
-Free forever!"
+Free forever![/ul]
+
+And of couse, that means that unlike some other engines... (ahem Unity) you'll never need to worry about surprise install fees!"
 
 [node name="Footer" parent="Slides/What is open source?" index="2"]
 visible = false
 text = "Footer"
 
 [node name="Games made in Godot" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Games made in Godot" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "Games made in Godot!"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "In addition to our games, there are a number of other games that are being made, or have been made in godot. Heres some exampels:
+[ul] Buckshot Roulette
+ Slay Spire 2
+ Unrailed 2
+ Dome Keeper
+ PVKK [font_size=20]Planetenverteidigungskanonenkommandant[/font_size]
+[/ul]
+
+"
 
 [node name="Footer" parent="Slides/Games made in Godot" index="2"]
-text = "Things are coming along well~"
+text = "check out more at godotengine.org/showcase !"
 
 [node name="Benefits for game dev" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
