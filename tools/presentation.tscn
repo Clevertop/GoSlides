@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=21 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c5v28n08cwg1n" path="res://Unity-Symbol.png" id="9_68r2x"]
 [ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="9_bqqad"]
 [ext_resource type="Script" path="res://tools/progress_bar.gd" id="9_k3gnd"]
+[ext_resource type="Texture2D" uid="uid://tmhd70yn1uhl" path="res://maxresdefault (1).jpg" id="10_ffhlq"]
 [ext_resource type="Texture2D" uid="uid://bt0yakohg5isp" path="res://Unreal_Engine_Logo.svg.png" id="11_3wgr2"]
+[ext_resource type="Texture2D" uid="uid://lh71k2ukw22h" path="res://window.png" id="11_7y60f"]
 [ext_resource type="PackedScene" uid="uid://cap8s1gpqsueq" path="res://rug_player.tscn" id="12_xc2ke"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ss2u"]
@@ -176,6 +178,7 @@ subtitle = "This is the third slide"
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - File Size" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - File Size" index="0"]
@@ -323,6 +326,7 @@ visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - File Size2" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - File Size2" index="0"]
@@ -468,13 +472,34 @@ layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - Code Editor" index="0"]
 title = "Godot's killer features"
-subtitle = "This is the third slide"
+subtitle = "Built-in Script Editor"
+
+[node name="RichTextLabel" parent="Slides/Godot\'s killer features - Code Editor/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" index="0"]
+text = "The out-of-the-box script editor allows for:
+[ul] Autocomplete
+ In-editor access to online documentation
+ Error checking
+ Breakpoints
+ Handy organisation features like code regions"
+
+[node name="TextureRect" parent="Slides/Godot\'s killer features - Code Editor/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" index="1"]
+visible = false
+
+[node name="Window" type="Sprite2D" parent="Slides/Godot\'s killer features - Code Editor/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" index="2"]
+position = Vector2(1358, 412)
+scale = Vector2(0.453552, 0.453552)
+texture = ExtResource("11_7y60f")
+
+[node name="Maxresdefault(1)" type="Sprite2D" parent="Slides/Godot\'s killer features - Code Editor/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" index="3"]
+position = Vector2(459, 531)
+scale = Vector2(0.590278, 0.590278)
+texture = ExtResource("10_ffhlq")
 
 [node name="Footer" parent="Slides/Godot\'s killer features - Code Editor" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - Asset Library" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - Asset Library" index="0"]
@@ -507,15 +532,21 @@ subtitle = "This is the third slide"
 text = "Things are coming along well~"
 
 [node name="Our contact page (Leave up for questions)" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Our contact page (Leave up for questions)" index="0"]
+visible = false
 title = "Meowww!!!"
 subtitle = "This is the third slide"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Slides/Our contact page (Leave up for questions)/ColorRect/VBoxContainer" index="0"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[wave][center][font_size=100]Thanks for listening!"
+fit_content = true
+
 [node name="Footer" parent="Slides/Our contact page (Leave up for questions)" index="2"]
-text = "Things are coming along well~"
+text = "Any questions?"
 
 [node name="ExitBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 50)
