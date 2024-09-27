@@ -171,6 +171,7 @@ And of couse, that means that unlike some other engines... (ahem Unity) you'll n
 [node name="ImageGallery" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
 images = Array[Texture2D]([ExtResource("11_0qxko"), ExtResource("12_p1su2"), ExtResource("13_w5s8p")])
+image_time = 6.0
 
 [node name="TextureRect" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="2"]
 visible = false
@@ -204,6 +205,7 @@ visible = false
 [node name="ImageGallery" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="2" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
 images = Array[Texture2D]([ExtResource("14_ceuyj"), ExtResource("15_bwg6r"), ExtResource("16_4et0e"), ExtResource("17_qhtu1"), ExtResource("18_qnxvp")])
+image_time = 6.0
 
 [node name="Footer" parent="Slides/Games made in Godot" index="2"]
 text = "check out more at godotengine.org/showcase !"
@@ -231,6 +233,7 @@ visible = false
 [node name="ImageGallery" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="2" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
 images = Array[Texture2D]([ExtResource("19_cey53"), ExtResource("11_ynajw"), ExtResource("21_hhl27"), ExtResource("22_ixo4s")])
+image_time = 6.0
 
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
 text = "Things are coming along well~"
@@ -253,6 +256,7 @@ text = "[ul] Built in code editor - includes autocomplete and inbuilt access to 
 [node name="ImageGallery" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
 images = Array[Texture2D]([ExtResource("23_35b2a"), ExtResource("24_42sc6"), ExtResource("25_34hna")])
+image_time = 6.0
 
 [node name="TextureRect" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="2"]
 visible = false
