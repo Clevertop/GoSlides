@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=19 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
@@ -7,18 +7,27 @@
 [ext_resource type="Texture2D" uid="uid://bcgsioqubeos3" path="res://rug/2.png" id="4_s3h6q"]
 [ext_resource type="Texture2D" uid="uid://xq82athlp711" path="res://rug/3.png" id="5_soan3"]
 [ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="6_02god"]
+[ext_resource type="Texture2D" uid="uid://c5v28n08cwg1n" path="res://Unity-Symbol.png" id="9_68r2x"]
 [ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="9_bqqad"]
 [ext_resource type="Script" path="res://tools/progress_bar.gd" id="9_k3gnd"]
+[ext_resource type="Texture2D" uid="uid://bt0yakohg5isp" path="res://Unreal_Engine_Logo.svg.png" id="11_3wgr2"]
 [ext_resource type="PackedScene" uid="uid://cap8s1gpqsueq" path="res://rug_player.tscn" id="12_xc2ke"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j57wk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idp5h"]
+bg_color = Color(0.80549, 0.376258, 0.376258, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlksy"]
 font_size = 50
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkhfn"]
+bg_color = Color(0.941263, 0.829214, 0.297305, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw8xs"]
+bg_color = Color(0.278431, 0.54902, 0.74902, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl1th"]
 font_color = Color(1, 0, 0, 1)
@@ -198,15 +207,18 @@ visible = false
 
 [node name="Engine Comparison graph" type="HBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer" index="1"]
 layout_mode = 2
-theme_override_constants/separation = 150
+theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Unity" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph"]
 layout_mode = 2
 
 [node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
+custom_minimum_size = Vector2(153.485, 0)
 layout_mode = 2
-texture = ExtResource("9_bqqad")
+texture = ExtResource("9_68r2x")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
 layout_mode = 2
@@ -221,7 +233,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_top = -85.0
-offset_right = 507.0
+offset_right = 536.47
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 4.71239
@@ -232,25 +244,34 @@ value = 55.71
 show_percentage = false
 script = ExtResource("9_k3gnd")
 speed = 3.0
+target_value = 6000.0
+
+[node name="Timer" type="Timer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar"]
+wait_time = 0.001
+one_shot = true
 
 [node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
 layout_mode = 2
-text = "100mb"
+text = "6GB"
 label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
 
-[node name="Unity2" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph"]
+[node name="Unreal" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph"]
 layout_mode = 2
 
-[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2"]
+[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
+custom_minimum_size = Vector2(28.82, 150)
 layout_mode = 2
-texture = ExtResource("9_bqqad")
+texture = ExtResource("11_3wgr2")
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2"]
+[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -258,36 +279,45 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_top = -85.0
-offset_right = 507.0
+offset_right = 536.47
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 4.71239
 pivot_offset = Vector2(0, 42)
 theme_override_styles/background = SubResource("StyleBoxFlat_j57wk")
-theme_override_styles/fill = SubResource("StyleBoxFlat_idp5h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pkhfn")
 value = 55.71
 show_percentage = false
 script = ExtResource("9_k3gnd")
 speed = 3.0
+target_value = 60000.0
 
-[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2"]
+[node name="Timer" type="Timer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control/ProgressBar"]
+one_shot = true
+
+[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
 layout_mode = 2
-text = "100mb"
+text = "60GB"
 label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
 
-[node name="Unity3" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph"]
+[node name="Godot" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph"]
 layout_mode = 2
 
-[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3"]
+[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
+custom_minimum_size = Vector2(0, 170.91)
 layout_mode = 2
 texture = ExtResource("9_bqqad")
+expand_mode = 3
+stretch_mode = 5
 
-[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3"]
+[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3/Control"]
+[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -295,24 +325,171 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_top = -85.0
-offset_right = 507.0
+offset_right = 536.47
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 4.71239
 pivot_offset = Vector2(0, 42)
 theme_override_styles/background = SubResource("StyleBoxFlat_j57wk")
-theme_override_styles/fill = SubResource("StyleBoxFlat_idp5h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bw8xs")
 value = 55.71
 show_percentage = false
-script = ExtResource("9_k3gnd")
-speed = 3.0
 
-[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3"]
+[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
+visible = false
 layout_mode = 2
-text = "100mb"
+text = "126 MB"
 label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
 
 [node name="Footer" parent="Slides/Godot\'s killer features - File Size" index="2"]
+visible = false
+text = "Things are coming along well~"
+
+[node name="Godot\'s killer features - File Size2" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
+layout_mode = 1
+
+[node name="Header" parent="Slides/Godot\'s killer features - File Size2" index="0"]
+title = "Godot's killer features"
+subtitle = "Miniature File Size"
+
+[node name="HBoxContainer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer" index="0"]
+visible = false
+
+[node name="Engine Comparison graph" type="HBoxContainer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Unity" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph"]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
+custom_minimum_size = Vector2(153.485, 0)
+layout_mode = 2
+texture = ExtResource("9_68r2x")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 536.47
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 4.71239
+pivot_offset = Vector2(0, 42)
+theme_override_styles/background = SubResource("StyleBoxFlat_j57wk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_idp5h")
+max_value = 60000.0
+value = 6000.0
+show_percentage = false
+
+[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity"]
+layout_mode = 2
+text = "6GB"
+label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
+
+[node name="Unreal" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph"]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
+custom_minimum_size = Vector2(28.82, 150)
+layout_mode = 2
+texture = ExtResource("11_3wgr2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 536.47
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 4.71239
+pivot_offset = Vector2(0, 42)
+theme_override_styles/background = SubResource("StyleBoxFlat_j57wk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pkhfn")
+max_value = 60000.0
+value = 60000.0
+show_percentage = false
+
+[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal"]
+layout_mode = 2
+text = "60GB"
+label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
+
+[node name="Godot" type="VBoxContainer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph"]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
+custom_minimum_size = Vector2(0, 170.91)
+layout_mode = 2
+texture = ExtResource("9_bqqad")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 536.47
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 4.71239
+pivot_offset = Vector2(0, 42)
+theme_override_styles/background = SubResource("StyleBoxFlat_j57wk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bw8xs")
+value = 55.71
+show_percentage = false
+script = ExtResource("9_k3gnd")
+target_value = 126.0
+
+[node name="Timer" type="Timer" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar"]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
+[node name="Engine Size" type="Label" parent="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot"]
+layout_mode = 2
+text = "126MB"
+label_settings = SubResource("LabelSettings_mlksy")
+horizontal_alignment = 1
+
+[node name="Footer" parent="Slides/Godot\'s killer features - File Size2" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - Lower system requirements" parent="Slides" instance=ExtResource("3_o6pbq")]
@@ -348,15 +525,15 @@ subtitle = "This is the third slide"
 [node name="Footer" parent="Slides/Godot\'s killer features - Asset Library" index="2"]
 text = "Things are coming along well~"
 
-[node name="Godot\'s killer features - Open Source (again)" parent="Slides" instance=ExtResource("3_o6pbq")]
+[node name="Godot\'s killer features - 2D AND 3D?" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
 
-[node name="Header" parent="Slides/Godot\'s killer features - Open Source (again)" index="0"]
+[node name="Header" parent="Slides/Godot\'s killer features - 2D AND 3D?" index="0"]
 title = "Godot's killer features"
 subtitle = "This is the third slide"
 
-[node name="Footer" parent="Slides/Godot\'s killer features - Open Source (again)" index="2"]
+[node name="Footer" parent="Slides/Godot\'s killer features - 2D AND 3D?" index="2"]
 text = "Things are coming along well~"
 
 [node name="Want to learn Godot?" parent="Slides" instance=ExtResource("3_o6pbq")]
@@ -404,8 +581,13 @@ label_settings = SubResource("LabelSettings_gl1th")
 horizontal_alignment = 1
 
 [connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar" method="_on_visibility_changed"]
-[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity2/Control/ProgressBar" method="_on_visibility_changed"]
-[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity3/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="timeout" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar/Timer" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar" method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unity/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Unreal/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar" to="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar" method="_on_visibility_changed"]
+[connection signal="timeout" from="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar/Timer" to="Slides/Godot\'s killer features - File Size2/ColorRect/MarginContainer/Engine Comparison graph/Godot/Control/ProgressBar" method="_on_timer_timeout"]
 
 [editable path="Slides/1"]
 [editable path="Slides/2"]
@@ -419,9 +601,10 @@ horizontal_alignment = 1
 [editable path="Slides/What makes Godot different?"]
 [editable path="Slides/Limitations"]
 [editable path="Slides/Godot\'s killer features - File Size"]
+[editable path="Slides/Godot\'s killer features - File Size2"]
 [editable path="Slides/Godot\'s killer features - Lower system requirements"]
 [editable path="Slides/Godot\'s killer features - Easy export for HTML"]
 [editable path="Slides/Godot\'s killer features - Asset Library"]
-[editable path="Slides/Godot\'s killer features - Open Source (again)"]
+[editable path="Slides/Godot\'s killer features - 2D AND 3D?"]
 [editable path="Slides/Want to learn Godot?"]
 [editable path="Slides/Our contact page (Leave up for questions)"]

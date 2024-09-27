@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_glcb6")
+theme_override_constants/separation = 0
 
 [node name="Header" parent="." instance=ExtResource("1_bhwne")]
 layout_mode = 2
