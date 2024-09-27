@@ -43,6 +43,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/1/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("3_ipheb")
 expand_mode = 3
 
@@ -54,6 +55,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/2/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("4_s3h6q")
 expand_mode = 3
 
@@ -65,6 +67,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/3/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("5_soan3")
 expand_mode = 3
 
@@ -76,6 +79,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/4/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("6_02god")
 expand_mode = 3
 
@@ -136,7 +140,9 @@ text = "Open source means that the original source code is freely available. Thi
 [ul]Redistributable
 Modifiable
 Collaborative
-Free forever!"
+Free forever![/ul]
+
+And of couse, that means that unlike some other engines... (ahem Unity) you'll never need to worry about surprise install fees!"
 
 [node name="Footer" parent="Slides/What is open source?" index="2"]
 visible = false
@@ -147,43 +153,74 @@ visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Games made in Godot" index="0"]
-title = "What has been made in Godot?"
+title = "Games made in Godot!"
 subtitle = ""
 
+[node name="RichTextLabel" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "In addition to our games, there are a number of other games that are being made, or have been made in godot. Heres some exampels:
+[ul] Buckshot Roulette
+ Slay Spire 2
+ Unrailed 2
+ Dome Keeper
+ PVKK [font_size=20]Planetenverteidigungskanonenkommandant[/font_size]
+[/ul]
+
+"
+
 [node name="Footer" parent="Slides/Games made in Godot" index="2"]
-text = "Things are coming along well~"
+text = "check out more at godotengine.org/showcase !"
 
 [node name="Benefits for game dev" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Benefits for game dev" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "Benefits for Game Developer"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] True 2D and 3D rendering engines[/ul]
+       [font_size=25]Doesnt do the weird 2D inside a 3D engine that unity does (unless you want it too of course)[/font_size]
+[ul] Supports Windows, Mac, Linux, Android and IOS
+ Really good support for HTML web builds - great for uploading to itch.io
+ Support for VR
+ High Quality rendering
+"
 
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
 text = "Things are coming along well~"
 
 [node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/What makes Godot different?" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "What makes godot different?"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/What makes Godot different?/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] Built in code editor - includes autocomplete and inbuilt access to docs
+ Choose to program in either gdscript or C#
+ Animation editor allows for easy editing of keyframes and managing tracks 
+ Signals allow you to create events that other nodes in the game can subscribe to
+ Robust UI layout system "
 
 [node name="Footer" parent="Slides/What makes Godot different?" index="2"]
 text = "Things are coming along well~"
 
 [node name="Limitations" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Limitations" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "Limitations"
+subtitle = "mrowww...."
+
+[node name="RichTextLabel" parent="Slides/Limitations/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] Due to the closed source nature of consoles, their exports templates cannot be included with the engine, or provided byt the godot foundation - You can still export to consoles but it requires more work, or using a porting service
+ The default 3D graphics pipeline is much simpler compared to Unity's HDRP and Unreal engines default rendering but some developers have still made amazing graphics in godot!
+ Due to being newer and not currenty widely used in the industry, the community is smaller "
 
 [node name="Footer" parent="Slides/Limitations" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - File Size" parent="Slides" instance=ExtResource("3_o6pbq")]
