@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c7f5wae7pdjt2"]
+[gd_scene load_steps=36 format=3 uid="uid://c7f5wae7pdjt2"]
 
 [ext_resource type="Script" path="res://tools/Presentation.gd" id="1_qta7b"]
 [ext_resource type="PackedScene" uid="uid://d8j6ib7w6yys" path="res://slides/image_slide.tscn" id="2_ik415"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://xq82athlp711" path="res://rug/3.png" id="5_soan3"]
 [ext_resource type="Texture2D" uid="uid://c8lv70amgbeev" path="res://rug/4.png" id="6_02god"]
 [ext_resource type="PackedScene" uid="uid://blu4544ek1sg1" path="res://transfer/godot's_killer_features___file_size.tscn" id="9_d1irl"]
-[ext_resource type="PackedScene" path="res://widgets/imageGallery.tscn" id="9_ps7ws"]
+[ext_resource type="PackedScene" uid="uid://btfa7ec7kchhv" path="res://widgets/imageGallery.tscn" id="9_ps7ws"]
 [ext_resource type="Texture2D" uid="uid://cn0cen48gp28p" path="res://images/logo_large_color_light.png" id="9_sk8pf"]
 [ext_resource type="PackedScene" uid="uid://djm8cv56arfi7" path="res://transfer/godot's_killer_features___file_size_2.tscn" id="10_waynb"]
 [ext_resource type="Texture2D" uid="uid://bmndc0dperqpb" path="res://images/Screenshot 2024-09-27 154936.png" id="11_0qxko"]
@@ -30,6 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://dsh82igoxdpgf" path="res://images/signals.webp" id="25_34hna"]
 [ext_resource type="Texture2D" uid="uid://bxto2xi1aqb0i" path="res://images/ps5.webp" id="26_7we82"]
 [ext_resource type="Texture2D" uid="uid://dx0a76lpom0ic" path="res://images/stingray.png" id="30_755wf"]
+[ext_resource type="Texture2D" uid="uid://bopapcw2ftt6y" path="res://IMG_6643.jpg" id="30_vu55w"]
+[ext_resource type="Texture2D" uid="uid://5dnl6gym60s0" path="res://Screenshot 2024-09-27 184733.jpg" id="31_av5pq"]
+[ext_resource type="Texture2D" uid="uid://monxg3k1fm3o" path="res://Screenshot 2024-09-27 190253.jpg" id="31_lp72j"]
+[ext_resource type="Texture2D" uid="uid://bf61sv1yojftm" path="res://maxresdefault-ezgif.com-webp-to-png-converter.png" id="32_hlpna"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gl1th"]
 font_color = Color(1, 0, 0, 1)
@@ -109,9 +113,11 @@ title = "What is Godot?"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="0"]
-text = "It is an [u]open source[/u] game engine.
+size_flags_vertical = 4
+text = "It is an [u][b]open source[/b][/u] game engine.
 
 But wait... what does open source mean?"
+fit_content = true
 
 [node name="TextureRect" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="1"]
 size_flags_horizontal = 3
@@ -153,6 +159,7 @@ title = "What is open source software?"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="0"]
+size_flags_vertical = 4
 text = "Open source means that the original source code is freely available. This means that the engine is:
 [ul]Redistributable
 Modifiable
@@ -160,11 +167,12 @@ Collaborative
 Free forever![/ul]
 
 And of couse, that means that unlike some other engines... (ahem Unity) you'll never need to worry about surprise install fees!"
+fit_content = true
 
 [node name="ImageGallery" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
 images = Array[Texture2D]([ExtResource("11_0qxko"), ExtResource("12_p1su2"), ExtResource("13_w5s8p")])
-image_time = 6.0
+image_time = 4.0
 
 [node name="TextureRect" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="2"]
 visible = false
@@ -288,6 +296,14 @@ layout_mode = 1
 [node name="Godot\'s killer features - Code Editor" parent="Slides" instance=ExtResource("11_hkchj")]
 layout_mode = 1
 
+[node name="RichTextLabel" parent="Slides/Godot\'s killer features - Code Editor/ColorRect/VBoxContainer/MarginContainer/HBoxContainer" index="0"]
+text = "[font_size=35]The out-of-the-box script editor allows for:
+[ul] Autocompletion
+ In-editor access to online documentation
+ Error checking
+ Breakpoints
+ Handy organisation features like code regions"
+
 [node name="Godot\'s killer features - Lower system requirements" parent="Slides" instance=ExtResource("3_o6pbq")]
 visible = false
 layout_mode = 1
@@ -297,14 +313,20 @@ title = "Godot's killer features"
 subtitle = "Low system requirements"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Lower system requirements/ColorRect/MarginContainer/HBoxContainer" index="0"]
-text = "Godot is very lightweight and runs on all kinds of devices, you dont need a gaming PC to make games in godot unless you are working on huge scenes with lots of complex content"
+size_flags_vertical = 4
+text = "Godot is very lightweight and runs on all kinds of devices, you dont need a gaming PC to make games in Godot unless you are working on huge scenes with lots of complex content!
+
+Pictured proof: Ethan's garbage laptop running Godot easily."
+fit_content = true
+
+[node name="TextureRect" parent="Slides/Godot\'s killer features - Lower system requirements/ColorRect/MarginContainer/HBoxContainer" index="1"]
+texture = ExtResource("30_vu55w")
 
 [node name="Footer" parent="Slides/Godot\'s killer features - Lower system requirements" index="2"]
 visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - Easy export for HTML" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - Easy export for HTML" index="0"]
@@ -312,10 +334,18 @@ title = "Godot's killer features"
 subtitle = "HTML Exports"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Easy export for HTML/ColorRect/MarginContainer/HBoxContainer" index="0"]
-text = "Unlike Unity, Godots HTML exports are small and performant 
+size_flags_vertical = 4
+text = "Unlike Unity, Godots HTML exports are small and performant.
 
-A perfect way to quickly show off your games without downloading them every time and makes it much easier for people to try out your game too
+This makes a perfect way to quickly show off your games without downloads, making it much easier for people to try out your game!
 "
+fit_content = true
+
+[node name="TextureRect" parent="Slides/Godot\'s killer features - Easy export for HTML/ColorRect/MarginContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(1000, 8.8)
+texture = ExtResource("31_lp72j")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="Footer" parent="Slides/Godot\'s killer features - Easy export for HTML" index="2"]
 visible = false
@@ -330,10 +360,16 @@ title = "Godot's killer features"
 subtitle = "Asset Library"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Asset Library/ColorRect/MarginContainer/HBoxContainer" index="0"]
-text = "The Godot Engine also includes an extensive library of free and open source assets inside the engine, ready fr you to download and use. Some we've sued previously include:
-[ul] Simple FPS Controller - Lots of assets are available for all kinds of player moveemnt and act as a great starting point to build on
- MultiplayerInput - A very useful library for smoothly handling input from multiple controllers including the keyboard at the same time
- GodotSteam - A very effective implementation of the Steamworks API, allows you to add steam features to your game: Leaderboards, Acheivements but most importantly - Peer to Peer online multiplayer!"
+size_flags_vertical = 4
+text = "The Godot Engine also includes an extensive library of free and open source assets available straight from the editor. Some we've used previously include:
+[ul] Simple FPS Controller (For first person games)
+ MultiplayerInput (For handling inputs from multiple controllers)
+ GodotSteam - A Godot wrapper for the Steamworks API, including the ability to include Peer to Peer online multiplayer!
+ Dialogic (Dialogue manager for games)"
+fit_content = true
+
+[node name="TextureRect" parent="Slides/Godot\'s killer features - Asset Library/ColorRect/MarginContainer/HBoxContainer" index="1"]
+texture = ExtResource("31_av5pq")
 
 [node name="Footer" parent="Slides/Godot\'s killer features - Asset Library" index="2"]
 visible = false
@@ -370,16 +406,20 @@ subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/Want to learn Godot?/ColorRect/MarginContainer/HBoxContainer" index="0"]
 text = "Ton's of resources are available to help you get started:
-[ul] Youtube tutorials (brakeys)
+[ul] Youtube tutorials (Brackeys)
  Official Godot Discord Server
  Godot Cafe 
- [wave]Team Stingray Server!![/wave]
+ [wave amp=50][rainbow]Team Stingray Server!![/rainbow][/wave]
  The Godot Documentation"
+
+[node name="TextureRect" parent="Slides/Want to learn Godot?/ColorRect/MarginContainer/HBoxContainer" index="1"]
+texture = ExtResource("32_hlpna")
 
 [node name="Footer" parent="Slides/Want to learn Godot?" index="2"]
 text = "We're always open to helping new users, feel free to reach out to us on discord or through our server!"
 
 [node name="Our contact page (Leave up for questions)" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Our contact page (Leave up for questions)" index="0"]
@@ -387,8 +427,8 @@ title = "Thanks for watching!"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/Our contact page (Leave up for questions)/ColorRect/MarginContainer/HBoxContainer" index="0"]
-text = "Ethans Discord: eefschmeef
-Tabbys Discord: tabby_ _cat
+text = "Ethans Discord: [color=6ee007]@eefschmeef[/color]
+Tabbys Discord: [color=purple]@tabby_ _cat[/color]
 
 Team Stingray Server: 
 [u]discord.gg/3BPYMHqNve[/u]
