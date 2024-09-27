@@ -10,10 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5uvqy")
+"texture": ExtResource("3_mquon")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_mquon")
+"texture": ExtResource("2_5uvqy")
 }],
 "loop": true,
 "name": &"default",
@@ -40,5 +40,4 @@ shape = SubResource("CircleShape2D_kwcsl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ol8gj")
 autoplay = "idle"
-frame = 1
 frame_progress = 0.80536
