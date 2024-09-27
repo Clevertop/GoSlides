@@ -41,11 +41,13 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 bbcode_enabled = true
 text = "[color=#E3266F]Game studios[/color] like Gamblify, GuaranApps, Kivano...
 [color=#26BFE3]Schools[/color] including School4Games Berlin, KidsCanCode...
 [color=#02E180]Content creators[/color] like Heartbeast, GamesFromScratch, [i]GDQuest[/i]...
 "
+fit_content = true
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/HBoxContainer"]
 layout_mode = 2

@@ -113,11 +113,9 @@ title = "What is Godot?"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "It is an [u][b]open source[/b][/u] game engine.
 
 But wait... what does open source mean?"
-fit_content = true
 
 [node name="TextureRect" parent="Slides/What is Godot?/ColorRect/MarginContainer/HBoxContainer" index="1"]
 size_flags_horizontal = 3
@@ -139,9 +137,7 @@ title = "What is Godot?"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/Glad You Asked!/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "[center] [font_size=150]I'm so glad you asked!"
-fit_content = true
 
 [node name="TextureRect" parent="Slides/Glad You Asked!/ColorRect/MarginContainer/HBoxContainer" index="1"]
 visible = false
@@ -159,7 +155,6 @@ title = "What is open source software?"
 subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "Open source means that the original source code is freely available. This means that the engine is:
 [ul]Redistributable
 Modifiable
@@ -167,7 +162,6 @@ Collaborative
 Free forever![/ul]
 
 And of couse, that means that unlike some other engines... (ahem Unity) you'll never need to worry about surprise install fees!"
-fit_content = true
 
 [node name="ImageGallery" parent="Slides/What is open source?/ColorRect/MarginContainer/HBoxContainer" index="1" instance=ExtResource("9_ps7ws")]
 layout_mode = 2
@@ -221,7 +215,7 @@ subtitle = ""
 
 [node name="RichTextLabel" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="0"]
 text = "[ul] True 2D and 3D rendering engines[/ul]
-       [font_size=25]Doesnt do the weird 2D inside a 3D engine that unity does (unless you want it too of course)[/font_size]
+       [font_size=25]Doesnt do the weird 2D inside a 3D engine that unity does (unless you want it to of course)[/font_size]
 [ul] Supports Windows, Mac, Linux, Android and IOS
  Really good support for HTML web builds - great for uploading to itch.io
  Support for VR
@@ -278,7 +272,10 @@ subtitle = "mrowww...."
 [node name="RichTextLabel" parent="Slides/Limitations/ColorRect/MarginContainer/HBoxContainer" index="0"]
 text = "[ul] Due to the closed source nature of consoles, their exports templates cannot be included with the engine, or provided byt the godot foundation - You can still export to consoles but it requires more work, or using a porting service
  The default 3D graphics pipeline is much simpler compared to Unity's HDRP and Unreal engines default rendering but some developers have still made amazing graphics in godot!
- Due to being newer and not currenty widely used in the industry, the community is smaller "
+ Due to being newer and not currenty widely used in the industry, the community is smaller.
+[/ul]
+
+[font_size=50]Let's talk about Godot's killer features!"
 
 [node name="TextureRect" parent="Slides/Limitations/ColorRect/MarginContainer/HBoxContainer" index="1"]
 texture = ExtResource("26_7we82")
@@ -313,11 +310,9 @@ title = "Godot's killer features"
 subtitle = "Low system requirements"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Lower system requirements/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "Godot is very lightweight and runs on all kinds of devices, you dont need a gaming PC to make games in Godot unless you are working on huge scenes with lots of complex content!
 
 Pictured proof: Ethan's garbage laptop running Godot easily."
-fit_content = true
 
 [node name="TextureRect" parent="Slides/Godot\'s killer features - Lower system requirements/ColorRect/MarginContainer/HBoxContainer" index="1"]
 texture = ExtResource("30_vu55w")
@@ -327,6 +322,7 @@ visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - Easy export for HTML" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - Easy export for HTML" index="0"]
@@ -334,12 +330,10 @@ title = "Godot's killer features"
 subtitle = "HTML Exports"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Easy export for HTML/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "Unlike Unity, Godots HTML exports are small and performant.
 
 This makes a perfect way to quickly show off your games without downloads, making it much easier for people to try out your game!
 "
-fit_content = true
 
 [node name="TextureRect" parent="Slides/Godot\'s killer features - Easy export for HTML/ColorRect/MarginContainer/HBoxContainer" index="1"]
 custom_minimum_size = Vector2(1000, 8.8)
@@ -360,13 +354,11 @@ title = "Godot's killer features"
 subtitle = "Asset Library"
 
 [node name="RichTextLabel" parent="Slides/Godot\'s killer features - Asset Library/ColorRect/MarginContainer/HBoxContainer" index="0"]
-size_flags_vertical = 4
 text = "The Godot Engine also includes an extensive library of free and open source assets available straight from the editor. Some we've used previously include:
 [ul] Simple FPS Controller (For first person games)
  MultiplayerInput (For handling inputs from multiple controllers)
  GodotSteam - A Godot wrapper for the Steamworks API, including the ability to include Peer to Peer online multiplayer!
  Dialogic (Dialogue manager for games)"
-fit_content = true
 
 [node name="TextureRect" parent="Slides/Godot\'s killer features - Asset Library/ColorRect/MarginContainer/HBoxContainer" index="1"]
 texture = ExtResource("31_av5pq")
@@ -376,7 +368,6 @@ visible = false
 text = "Things are coming along well~"
 
 [node name="Godot\'s killer features - Open Source (again)" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Godot\'s killer features - Open Source (again)" index="0"]
@@ -391,6 +382,9 @@ That means:
  No install fees
  No cut of your earnings go to godot
  Anyone can contribute to improve the engine "
+
+[node name="TextureRect" parent="Slides/Godot\'s killer features - Open Source (again)/ColorRect/MarginContainer/HBoxContainer" index="1"]
+texture_filter = 2
 
 [node name="Footer" parent="Slides/Godot\'s killer features - Open Source (again)" index="2"]
 visible = false
