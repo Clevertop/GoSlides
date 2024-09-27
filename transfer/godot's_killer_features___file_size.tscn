@@ -1,0 +1,217 @@
+[gd_scene load_steps=13 format=3 uid="uid://blu4544ek1sg1"]
+
+[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="1_dusbq"]
+[ext_resource type="PackedScene" uid="uid://b3hn5sbsngqud" path="res://widgets/header.tscn" id="2_0tvmy"]
+[ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="3_b10sh"]
+[ext_resource type="Texture2D" uid="uid://c5v28n08cwg1n" path="res://transfer/Unity-Symbol.png" id="4_okvpq"]
+[ext_resource type="Script" path="res://tools/progress_bar.gd" id="5_nnfrk"]
+[ext_resource type="Texture2D" uid="uid://bt0yakohg5isp" path="res://transfer/Unreal_Engine_Logo.svg.png" id="6_4217g"]
+[ext_resource type="PackedScene" uid="uid://cmlxbj2fr6ivw" path="res://widgets/footer.tscn" id="7_cndya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ss2u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mapny"]
+bg_color = Color(0.975206, 0.513257, 0.513257, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k502g"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jib2c"]
+bg_color = Color(0.975206, 0.914575, 0.513257, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqysm"]
+bg_color = Color(0.278431, 0.54902, 0.74902, 1)
+
+[node name="Godot\'s killer features - File Size" type="VBoxContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dusbq")
+theme_override_constants/separation = 0
+
+[node name="Header" parent="." instance=ExtResource("2_0tvmy")]
+layout_mode = 2
+title = "Godot's killer features"
+subtitle = "Miniature File Size"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#E3266F]Game studios[/color] like Gamblify, GuaranApps, Kivano...
+[color=#26BFE3]Schools[/color] including School4Games Berlin, KidsCanCode...
+[color=#02E180]Content creators[/color] like Heartbeast, GamesFromScratch, [i]GDQuest[/i]...
+"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_b10sh")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Unity" type="VBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unity"]
+custom_minimum_size = Vector2(0, 150.97)
+layout_mode = 2
+texture = ExtResource("4_okvpq")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unity"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unity/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3ss2u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mapny")
+max_value = 60000.0
+value = 1000.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_nnfrk")
+target_value = 6000.0
+
+[node name="Timer" type="Timer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unity/Control/ProgressBar"]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unity"]
+layout_mode = 2
+text = "6GB"
+label_settings = SubResource("LabelSettings_k502g")
+horizontal_alignment = 1
+
+[node name="Unreal" type="VBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unreal"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = ExtResource("6_4217g")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unreal"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unreal/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 13.14)
+theme_override_styles/background = SubResource("StyleBoxFlat_3ss2u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jib2c")
+max_value = 60000.0
+value = 1000.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_nnfrk")
+target_value = 60000.0
+
+[node name="Timer" type="Timer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unreal/Control/ProgressBar"]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Unreal"]
+layout_mode = 2
+text = "60GB"
+label_settings = SubResource("LabelSettings_k502g")
+horizontal_alignment = 1
+
+[node name="Godot" type="VBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Godot"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_b10sh")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Godot"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Godot/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 13.14)
+theme_override_styles/background = SubResource("StyleBoxFlat_3ss2u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tqysm")
+max_value = 60000.0
+value = 1000.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("5_nnfrk")
+target_value = 126.0
+
+[node name="Timer" type="Timer" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Godot/Control/ProgressBar"]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer2/Godot"]
+visible = false
+layout_mode = 2
+text = "126MB"
+label_settings = SubResource("LabelSettings_k502g")
+horizontal_alignment = 1
+
+[node name="Footer" parent="." instance=ExtResource("7_cndya")]
+visible = false
+layout_mode = 2
+text = "Things are coming along well~"

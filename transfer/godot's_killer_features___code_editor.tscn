@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyrxb1ojy1fxq"]
+
+[ext_resource type="Theme" uid="uid://bswj4s1sfy137" path="res://presentation_theme.tres" id="1_nl2vh"]
+[ext_resource type="PackedScene" uid="uid://b3hn5sbsngqud" path="res://widgets/header.tscn" id="2_w4kqk"]
+[ext_resource type="Texture2D" uid="uid://dweu560gyqjqy" path="res://icon.svg" id="3_5fk6m"]
+[ext_resource type="Texture2D" uid="uid://lh71k2ukw22h" path="res://transfer/window.png" id="4_pvj0n"]
+[ext_resource type="Texture2D" uid="uid://tmhd70yn1uhl" path="res://transfer/maxresdefault (1).jpg" id="5_n0bqs"]
+[ext_resource type="PackedScene" uid="uid://cmlxbj2fr6ivw" path="res://widgets/footer.tscn" id="6_rtu1p"]
+
+[node name="Godot\'s killer features - Code Editor" type="VBoxContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nl2vh")
+theme_override_constants/separation = 0
+
+[node name="Header" parent="." instance=ExtResource("2_w4kqk")]
+layout_mode = 2
+title = "Godot's killer features"
+subtitle = "Built-in Script Editor"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "The out-of-the-box script editor allows for:
+[ul] Autocomplete
+ In-editor access to online documentation
+ Error checking
+ Breakpoints
+ Handy organisation features like code regions"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_5fk6m")
+expand_mode = 3
+
+[node name="Window" type="Sprite2D" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+position = Vector2(1358, 412)
+scale = Vector2(0.453552, 0.453552)
+texture = ExtResource("4_pvj0n")
+
+[node name="Maxresdefault(1)" type="Sprite2D" parent="ColorRect/VBoxContainer/MarginContainer/HBoxContainer"]
+position = Vector2(459, 531)
+scale = Vector2(0.590278, 0.590278)
+texture = ExtResource("5_n0bqs")
+
+[node name="Footer" parent="." instance=ExtResource("6_rtu1p")]
+visible = false
+layout_mode = 2
+text = "Things are coming along well~"
