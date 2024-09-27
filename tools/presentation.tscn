@@ -156,8 +156,19 @@ visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Games made in Godot" index="0"]
-title = "What has been made in Godot?"
+title = "Games made in Godot!"
 subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/Games made in Godot/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "In addition to our games, there are a number of other games that are being made, or have been made in godot. Heres some exampels:
+[ul] Buckshot Roulette
+ Slay Spire 2
+ Unrailed 2
+ Dome Keeper
+ PVKK [font_size=20]Planetenverteidigungskanonenkommandant[/font_size]
+[/ul]
+
+"
 
 [node name="Footer" parent="Slides/Games made in Godot" index="2"]
 text = "Things are coming along well~"
