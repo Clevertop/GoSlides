@@ -138,6 +138,7 @@ visible = false
 text = "Footer"
 
 [node name="Games made in Godot" parent="Slides" instance=ExtResource("3_o6pbq")]
+visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Games made in Godot" index="0"]
@@ -163,14 +164,23 @@ visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/Benefits for game dev" index="0"]
-title = "Meowww!!!"
-subtitle = "This is the third slide"
+title = "Benefits for Game Developer"
+subtitle = ""
+
+[node name="RichTextLabel" parent="Slides/Benefits for game dev/ColorRect/MarginContainer/HBoxContainer" index="0"]
+text = "[ul] True 2D and 3D rendering engines[/ul]
+       [font_size=25]Doesnt do the weird 2D inside a 3D engine that unity does (unless you want it too of course)[/font_size]
+[ul] Supports Windows, Mac, Linux, Android and IOS
+ Really good support for HTML web builds - great for uploading to itch.io
+ Support for VR
+ High Quality rendering
+"
 
 [node name="Footer" parent="Slides/Benefits for game dev" index="2"]
+visible = false
 text = "Things are coming along well~"
 
 [node name="What makes Godot different?" parent="Slides" instance=ExtResource("3_o6pbq")]
-visible = false
 layout_mode = 1
 
 [node name="Header" parent="Slides/What makes Godot different?" index="0"]
