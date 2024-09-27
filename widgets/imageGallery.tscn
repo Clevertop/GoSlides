@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://btfa7ec7kchhv"]
+
+[ext_resource type="Script" path="res://widgets/image_gallery.gd" id="1_f7mmh"]
+
+[sub_resource type="Gradient" id="Gradient_2nnog"]
+offsets = PackedFloat32Array(0, 0.446154, 0.54359, 0.758974)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0.14, 0.14, 0.14, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7b30j"]
+gradient = SubResource("Gradient_2nnog")
+fill_from = Vector2(0, 1)
+
+[node name="ImageGallery" type="Control" node_paths=PackedStringArray("textureRect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_f7mmh")
+textureRect = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7b30j")
+expand_mode = 1
+stretch_mode = 5
