@@ -32,6 +32,7 @@ visible = false
 layout_mode = 1
 
 [node name="TextureRect2" parent="Slides/1/PanelContainer" index="0"]
+texture_filter = 2
 texture = ExtResource("3_ipheb")
 expand_mode = 3
 
