@@ -443,7 +443,6 @@ pivot_offset = Vector2(0, 13.14)
 theme_override_styles/background = SubResource("StyleBoxFlat_3ss2u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tqysm")
 max_value = 60000.0
-value = 1000.0
 fill_mode = 3
 show_percentage = false
 script = ExtResource("9_k3gnd")
